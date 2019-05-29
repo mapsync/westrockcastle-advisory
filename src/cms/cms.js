@@ -40,7 +40,7 @@ var NotificationControl = class Control extends React.Component {
     var link = document.getElementById("link-field-" + (id - 1)).value;
     if (link.startsWith("https://westernrockcastlewater.geosync.cloud")) {
       var url = new URL(link);
-      link = "https://gallant-jackson-42fe46.netlify.com" + url.pathname + url.search
+      link = "https://boring-shaw-bd8a27.netlify.com" + url.pathname + url.search
     }
     var delivery = new Date().toISOString();
     var date = new Date(document.getElementById("delivery-field-" + (id - 5)).value);
