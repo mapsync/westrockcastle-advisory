@@ -4,8 +4,8 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-display_url: https://paintsvilleutilities.geosync.cloud
-logo_url: https://paintsvilleutilities.geosync.cloud/img/logo.png
+display_url: https://westernrockcastlewater.geosync.cloud
+logo_url: https://westernrockcastlewater.geosync.cloud/img/logo.png
 
 collections:
   - name: "blog"
