@@ -53,7 +53,7 @@ export const ContactPageTemplate = ({ content, contentComponent, name, address, 
             Facebook
           </div>
           <div className="card-body">
-            {facebook}
+            <a href={facebook}>Western Rockcastle Water</a>
           </div>
         </div>
         <div className="card">
@@ -82,18 +82,20 @@ ContactPageTemplate.propTypes = {
 }
 
 const ContactPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { markdownRemark: post } = data
 
   return (
     <Layout>
       <ContactPageTemplate
-        name={frontmatter.name}
-        address={frontmatter.address}
-        mailing_address={frontmatter.mailing_address}
-        city_state_zip={frontmatter.city_state_zip}
-        phone={frontmatter.phone}
-        fax={frontmatter.fax}
-        facebook={frontmatter.facebook}
+        name={post.frontmatter.name}
+        address={post.frontmatter.address}
+        mailing_address={post.frontmatter.mailing_address}
+        city_state_zip={post.frontmatter.city_state_zip}
+        phone={post.frontmatter.phone}
+        fax={post.frontmatter.fax}
+        facebook={post.frontmatter.facebook}
+        contentComponent={HTMLContent}
+        content={post.html}
       />
     </Layout>
   )
