@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import * as Icon from 'react-feather'
 import Content, { HTMLContent } from '../components/Content'
 
-export const ContactPageTemplate = ({ Content, contentComponent, name, address, mailing_address, city_state_zip, phone, fax, facebook }) => {
+export const ContactPageTemplate = ({ content, contentComponent, name, address, mailing_address, city_state_zip, phone, fax, facebook }) => {
   const PageContent = contentComponent || Content
   return (
     <div>
@@ -61,7 +61,7 @@ export const ContactPageTemplate = ({ Content, contentComponent, name, address, 
             Information
           </div>
           <div className="card-body">
-            <PageContent className="content" content={Content} />
+            <PageContent className="content" content={content} />
           </div>
         </div>
       </div>
