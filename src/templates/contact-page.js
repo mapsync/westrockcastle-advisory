@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import * as Icon from 'react-feather';
+import * as Icon from 'react-feather'
+import Content, { HTMLContent } from '../components/Content'
 
-export const ContactPageTemplate = ({ name, address, mailing_address, city_state_zip, phone, after_hours_phone, fax, email, hours }) => {
+export const ContactPageTemplate = ({ content, contentComponent, name, address, mailing_address, city_state_zip, phone, fax, facebook }) => {
   return (
     <div>
       <div className="container container-main grid-md">
@@ -34,20 +35,38 @@ export const ContactPageTemplate = ({ name, address, mailing_address, city_state
           </div>
           <div className="card-body">
             T: <a href={"tel:1-" + phone}>{phone}</a><br />
+            F: <a href={"tel:1-" + fax}>{fax}</a><br />
           </div>
         </div>
         <div className="card">
           <div className="card-header">
-            Hours
+            After Hours Phone
           </div>
           <div className="card-body">
-            {hours}
+            Brandon Bishop: <a href="tel:1-606-308-9555">606-308-9555</a><br />
+            Charles DeBorde: <a href="tel:1-606-308-2416">606-308-2416</a><br />
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-header">
+            Facebook
+          </div>
+          <div className="card-body">
+            {facebook}
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-header">
+            Information
+          </div>
+          <div className="card-body">
+            <PageContent className="content" content={content} />
           </div>
         </div>
       </div>
       <div className="footer">
         <div className="d-inline-block float-right">
-          <a className="btn btn-sm btn-link tooltip tooltip-left" data-tooltip="Settings" rel="noopener noreferrer" href="https://stanfordwater.geosync.cloud/admin" target="_blank">
+          <a className="btn btn-sm btn-link tooltip tooltip-left" data-tooltip="Settings" rel="noopener noreferrer" href="https://westernrockcastlewater.geosync.cloud/admin" target="_blank">
             <Icon.Settings size={16}/>
           </a>
         </div>
@@ -72,10 +91,8 @@ const ContactPage = ({ data }) => {
         mailing_address={frontmatter.mailing_address}
         city_state_zip={frontmatter.city_state_zip}
         phone={frontmatter.phone}
-        after_hours_phone={frontmatter.after_hours_phone}
         fax={frontmatter.fax}
-        email={frontmatter.email}
-        hours={frontmatter.hours}
+        facebook={frontmatter.facebook}
       />
     </Layout>
   )
@@ -97,7 +114,8 @@ export const contactPageQuery = graphql`
         mailing_address,
         city_state_zip,
         phone,
-        hours
+        fax,
+        facebook
       }
     }
   }
