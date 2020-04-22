@@ -1,4 +1,4 @@
 ---
-center: '{"type":"Point","coordinates":[-84.3424463,37.353013]}'
+center: '{"type":"Point","coordinates":[-84.3411609,37.3528993]}'
 zoom: 13
 ---
